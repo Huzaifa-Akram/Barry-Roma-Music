@@ -21,7 +21,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Mr Barry Roma — Gruppi musicali dal vivo a Roma" },
       {
         property: "og:description",
-        content: "Musica dal vivo in stile “dolce vita” per matrimoni, feste ed eventi in tutta Italia.",
+        content:
+          "Musica dal vivo in stile “dolce vita” per matrimoni, feste ed eventi in tutta Italia.",
       },
       { property: "og:image", content: heroImg },
       { name: "twitter:image", content: heroImg },
@@ -33,7 +34,6 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <TopBanner />
       <Nav />
       <Hero />
       <RichHeadline />
@@ -50,28 +50,37 @@ function Index() {
 function TopBanner() {
   return (
     <div className="relative z-40 bg-gradient-red py-2.5 text-center text-xs uppercase tracking-[0.3em] text-primary-foreground">
-      <span className="opacity-90">✦ Prenotazioni aperte per la primavera e l'estate 2026 — Roma · Italia ·  ✦</span>
+      <span className="opacity-90">
+        ✦ Prenotazioni aperte per la primavera e l'estate 2026 — Roma · Italia · ✦
+      </span>
     </div>
   );
 }
 
 function Nav() {
   return (
-    <header className="absolute inset-x-0 top-9 z-30">
+    <header className="absolute inset-x-0 top-2 z-30 bg-transparent bg-gradient-to-b from-foreground/5">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
         <a href="#top" className="font-display text-2xl tracking-wide text-cream">
           Mr Barry <span className="text-accent">Roma</span>
         </a>
         <nav className="hidden gap-8 text-sm text-cream/80 md:flex">
-          <a href="#events" className="transition hover:text-cream">Eventi</a>
-          <a href="#story" className="transition hover:text-cream">Trama</a>
-          <a href="#stage" className="transition hover:text-cream">Palcoscenico</a>
-          <a href="#reviews" className="transition hover:text-cream">Recensioni</a>
-          <a href="#book" className="transition hover:text-cream">Libro</a>
+          <a href="#events" className="transition hover:text-cream">
+            Eventi
+          </a>
+          <a href="#story" className="transition hover:text-cream">
+            Trama
+          </a>
+          <a href="#stage" className="transition hover:text-cream">
+            Palcoscenico
+          </a>
+          <a href="#reviews" className="transition hover:text-cream">
+            Recensioni
+          </a>
+          <a href="#book" className="transition hover:text-cream">
+            Libro
+          </a>
         </nav>
-        <Button asChild size="sm" className="bg-gradient-gold text-gold-foreground shadow-gold hover:opacity-95">
-          <a href="#book">Contattaci</a>
-        </Button>
       </div>
     </header>
   );
@@ -94,16 +103,17 @@ function Hero() {
           In diretta da Roma
         </p>
         <h1 className="mt-4 max-w-3xl animate-fade-up font-display text-3xl leading-[0.95] text-cream text-balance sm:text-4xl md:text-6xl">
-          Organizza il tuo  <em className="text-accent">evento privato</em>
+          IN DIRETTA DA <em className="text-accent"> ROMA</em>
         </h1>
-        <p className="mt-6 max-w-xl animate-fade-up text-lg leading-relaxed text-cream/85">
-          
-        </p>
+        <p className="mt-6 max-w-xl animate-fade-up text-lg leading-relaxed text-cream/85"></p>
         <div className="mt-10 flex animate-fade-up flex-wrap gap-4">
-          <Button asChild size="lg" className="bg-gradient-gold text-gold-foreground shadow-gold hover:opacity-95">
+          <Button
+            asChild
+            size="lg"
+            className="bg-gradient-gold text-gold-foreground shadow-gold hover:opacity-95"
+          >
             <a href="#book">Contattaci</a>
           </Button>
-          
         </div>
       </div>
     </section>
@@ -116,15 +126,20 @@ function RichHeadline() {
       <div className="mx-auto max-w-5xl px-6 text-center">
         <p className="font-display text-sm uppercase tracking-[0.3em] text-primary">— Mr Barry</p>
         <h4 className="mt-6 font-display text-4xl leading-tight text-foreground text-balance sm:text-6xl md:text-3xl">
-          Non affitti uno spazio.<em className="text-primary">Crei</em> un ricordo.
+          Non affitti uno spazio crei un ricordo
+          {/* Non affitti uno spazio.<em className="text-primary">Crei</em> un ricordo.
           <br className="hidden md:block" />
-          Ci sono luoghi a Roma dove puoi fare una <span className="bg-gradient-gold bg-clip-text text-transparent">festa.</span>
-          come un <span className="underline decoration-primary decoration-4 underline-offset-8">E poi c'è Mr Barry.</span>.
+          Ci sono luoghi a Roma dove puoi fare una{" "}
+          <span className="bg-gradient-gold bg-clip-text text-transparent">festa.</span>
+          come un{" "}
+          <span className="underline decoration-primary decoration-4 underline-offset-8">
+            E poi c'è Mr Barry.
+          </span>
+          . */}
         </h4>
         <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-
-Ti ascoltiamo, capiamo cosa vuoi lasciare negli occhi dei tuoi ospiti, e costruiamo tutto intorno a quell'obiettivo.
-
+          Ci sono luoghi a Roma dove puoi fare una festa. E poi c&rsquo;&egrave; Mr Barry. Non
+          affitti uno spazio porti via un&rsquo;esperienza.
         </p>
       </div>
     </section>
@@ -206,7 +221,7 @@ function FlipCard({ index, Icon, title, body, tag }: FlipCardProps) {
           <h3 className="mt-auto font-display text-3xl text-foreground">{title}</h3>
           <div className="mt-6 flex items-center justify-between border-t border-border pt-4 text-xs uppercase tracking-[0.25em] text-muted-foreground">
             <span>{tag}</span>
-            <span className="text-primary">Hover →</span>
+            <span className="text-primary">Prenota →</span>
           </div>
         </article>
         {/* Back */}
@@ -223,8 +238,12 @@ function FlipCard({ index, Icon, title, body, tag }: FlipCardProps) {
           </div>
           <div className="flex items-center justify-between border-t border-cream/20 pt-4 text-xs uppercase tracking-[0.25em] text-cream/80">
             <span>{tag}</span>
-            <a href="#book" className="text-accent transition hover:opacity-80" onClick={(e) => e.stopPropagation()}>
-              Reserve →
+            <a
+              href="#book"
+              className="text-accent transition hover:opacity-80"
+              onClick={(e) => e.stopPropagation()}
+            >
+              Prenota →
             </a>
           </div>
         </article>
@@ -255,22 +274,39 @@ function ImageText() {
         </div>
 
         <div>
-          <p className="font-display text-sm uppercase tracking-[0.3em] text-primary">— La nostra storia</p>
+          <p className="font-display text-sm uppercase tracking-[0.3em] text-primary">
+            — La nostra storia
+          </p>
           <h2 className="mt-4 font-display text-4xl text-foreground text-balance sm:text-5xl">
             Mr. Barry Roma
           </h2>
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            C'è una differenza tra un locale che fa eventi privati e un locale che sa fare eventi privati. La differenza si sente nell'aria, nel modo in cui ti risponde il team, in come finisce la serata. In sei anni abbiamo organizzato centinaia di eventi, oggi sappiamo esattamente cosa serve per far funzionare una serata  e cosa basta perché vada storta. 
-
-L'obiettivo non è fare una bella serata. È fare quella di cui parlate ancora dopo sei mesi.
-
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground text-justify">
+            C'è una differenza tra un locale che fa eventi privati e un locale che sa fare eventi
+            privati. La differenza si sente nell'aria, nel modo in cui ti risponde il team, in come
+            finisce la serata.
           </p>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground text-justify">
+            In sei anni abbiamo organizzato centinaia di eventi, oggi sappiamo esattamente cosa
+            serve per far funzionare una serata e cosa basta perché vada storta. L'obiettivo non è
+            fare una bella serata. È fare quella di cui parlate ancora dopo sei mesi.
+          </p>
+
           <ul className="mt-8 space-y-3 text-foreground/85">
-            <li className="flex gap-3"><span className="text-primary"></span> </li>
-            <li className="flex gap-3"><span className="text-primary"></span> </li>
-            <li className="flex gap-3"><span className="text-primary"></span> </li>
+            <li className="flex gap-3">
+              <span className="text-primary"></span>{" "}
+            </li>
+            <li className="flex gap-3">
+              <span className="text-primary"></span>{" "}
+            </li>
+            <li className="flex gap-3">
+              <span className="text-primary"></span>{" "}
+            </li>
           </ul>
-          <Button asChild size="lg" className="mt-10 bg-foreground text-background hover:opacity-90">
+          <Button
+            asChild
+            size="lg"
+            className="mt-10 bg-foreground text-background hover:opacity-90"
+          >
             <a href="#book">Contattaci</a>
           </Button>
         </div>
@@ -289,7 +325,9 @@ function PhotoText() {
             Ogni completo, realizzato su misura come un capo di alta moda.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-cream/75">
-            Non una sala. Un'identità. Porti i tuoi ospiti in un posto che ha già una storia, un'energia, una reputazione. Non devono immaginare l'atmosfera la respirano appena entrano. 
+            Non una sala. Un'identità. Porti i tuoi ospiti in un posto che ha già una storia,
+            un'energia, una reputazione. Non devono immaginare l'atmosfera la respirano appena
+            entrano.
           </p>
           <dl className="mt-10 grid grid-cols-3 gap-6 border-t border-cream/15 pt-8">
             <div>
@@ -298,25 +336,46 @@ function PhotoText() {
             </div>
             <div>
               <dt className="font-display text-4xl text-accent">120 </dt>
-              <dd className="mt-1 text-xs uppercase tracking-widest text-cream/60">Adii al celibato</dd>
+              <dd className="mt-1 text-xs uppercase tracking-widest text-cream/60">
+                Adii al celibato
+              </dd>
             </div>
             <div>
               <dt className="font-display text-4xl text-accent">97</dt>
-              <dd className="mt-1 text-xs uppercase tracking-widest text-cream/60">Eventi aziendali</dd>
+              <dd className="mt-1 text-xs uppercase tracking-widest text-cream/60">
+                Eventi aziendali
+              </dd>
             </div>
           </dl>
         </div>
 
         <div className="order-1 grid grid-cols-2 gap-4 md:order-2">
           <div className="aspect-[3/4] overflow-hidden rounded-2xl">
-            <img src={featureEvent} alt="Saxophonist and singer at a candlelit event" loading="lazy" width={1280} height={1280} className="h-full w-full object-cover" />
+            <img
+              src={featureEvent}
+              alt="Saxophonist and singer at a candlelit event"
+              loading="lazy"
+              width={1280}
+              height={1280}
+              className="h-full w-full object-cover"
+            />
           </div>
           <div className="mt-10 grid gap-4">
             <div className="aspect-square overflow-hidden rounded-2xl">
-              <img src={gallery2} alt="Live performance in Roman venue" loading="lazy" className="h-full w-full object-cover" />
+              <img
+                src={gallery2}
+                alt="Live performance in Roman venue"
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
             </div>
             <div className="aspect-square overflow-hidden rounded-2xl">
-              <img src={gallery4} alt="Rooftop wedding reception with live band in Rome" loading="lazy" className="h-full w-full object-cover" />
+              <img
+                src={gallery4}
+                alt="Rooftop wedding reception with live band in Rome"
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -350,9 +409,11 @@ function Reviews() {
     <section id="reviews" className="bg-secondary py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
-          <p className="font-display text-sm uppercase tracking-[0.3em] text-primary">— Recensioni</p>
+          <p className="font-display text-sm uppercase tracking-[0.3em] text-primary">
+            — Recensioni
+          </p>
           <h2 className="mt-4 font-display text-4xl text-foreground text-balance sm:text-4xl">
-            Parole raccolte nelle sale in cui abbiamo suonato.
+            Chi ha già organizzato eventi insieme a noi.
           </h2>
         </div>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
@@ -371,7 +432,6 @@ function Reviews() {
               </blockquote>
               <div className="mt-auto pt-8">
                 <p className="font-display text-lg text-foreground">{r.name}</p>
-                <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">{r.role}</p>
               </div>
             </article>
           ))}
@@ -420,7 +480,9 @@ function Footer() {
               Mr Barry <span className="text-accent">Roma</span>
             </a>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/70">
-              Una band italiana dal sound cinematografico, radicata nella tradizione della dolce vita. Calde note di ottoni, voci intime, serate indimenticabili: da Roma a qualsiasi luogo ci chiamiate.
+              Una band italiana dal sound cinematografico, radicata nella tradizione della dolce
+              vita. Calde note di ottoni, voci intime, serate indimenticabili: da Roma a qualsiasi
+              luogo ci chiamiate.
             </p>
             <div className="mt-6 flex gap-3">
               <a
@@ -446,11 +508,31 @@ function Footer() {
           <div className="md:col-span-3">
             <p className="font-display text-xs uppercase tracking-[0.3em] text-accent">Esplora</p>
             <ul className="mt-5 space-y-3 text-sm text-cream/80">
-              <li><a href="#events" className="transition hover:text-accent">Eventi</a></li>
-              <li><a href="#story" className="transition hover:text-accent">La nostra storia</a></li>
-              <li><a href="#stage" className="transition hover:text-accent">Sul palco</a></li>
-              <li><a href="#reviews" className="transition hover:text-accent">Recensioni</a></li>
-              <li><a href="#book" className="transition hover:text-accent">Contattaci</a></li>
+              <li>
+                <a href="#events" className="transition hover:text-accent">
+                  Eventi
+                </a>
+              </li>
+              <li>
+                <a href="#story" className="transition hover:text-accent">
+                  La nostra storia
+                </a>
+              </li>
+              <li>
+                <a href="#stage" className="transition hover:text-accent">
+                  Sul palco
+                </a>
+              </li>
+              <li>
+                <a href="#reviews" className="transition hover:text-accent">
+                  Recensioni
+                </a>
+              </li>
+              <li>
+                <a href="#book" className="transition hover:text-accent">
+                  Contattaci
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -480,7 +562,9 @@ function Footer() {
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-cream/10 pt-8 text-xs text-cream/50 md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} Mr Barry Roma. All rights reserved.</p>
-          <p className="uppercase tracking-[0.3em]">Realizzato a Roma · Utilizzato in tutto il mondo</p>
+          <p className="uppercase tracking-[0.3em]">
+            Realizzato a Roma · Utilizzato in tutto il mondo
+          </p>
         </div>
       </div>
     </footer>
