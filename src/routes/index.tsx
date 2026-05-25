@@ -602,13 +602,13 @@ function Footer() {
               >
                 <Instagram className="h-4 w-4" />
               </a>
-              <a
+              {/* <a
                 href="mailto:hello@mrbarryroma.com"
                 aria-label="Email"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cream/15 transition hover:border-accent hover:text-accent"
               >
                 <Mail className="h-4 w-4" />
-              </a>
+              </a> */}
             </div>
           </div>
 
