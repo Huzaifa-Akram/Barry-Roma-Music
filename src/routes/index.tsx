@@ -274,8 +274,6 @@ function FlipCard({ index, Icon, title, body, tag }: FlipCardProps) {
   return (
     <div
       className="group relative h-72 cursor-pointer [transform-style:preserve-3d]"
-      onMouseEnter={() => setFlipped(true)}
-      onMouseLeave={() => setFlipped(false)}
       onClick={() => setFlipped((v) => !v)}
     >
       <div
@@ -293,12 +291,12 @@ function FlipCard({ index, Icon, title, body, tag }: FlipCardProps) {
           <h3 className="mt-auto font-display text-3xl text-foreground">{title}</h3>
           <div className="mt-6 flex items-center justify-between border-t border-border pt-4 text-xs uppercase tracking-[0.25em] text-muted-foreground">
             <span>{tag}</span>
-            <span className="text-primary">Prenota →</span>
+            <span className="text-primary">Leggi di più →</span>
           </div>
         </article>
         {/* Back */}
         <article
-          className="absolute inset-0 flex flex-col justify-between rounded-2xl bg-gradient-red p-8 text-primary-foreground shadow-elegant [backface-visibility:hidden]"
+          className="absolute inset-0 flex flex-col justify-between rounded-2xl bg-black p-8 text-primary-foreground shadow-elegant [backface-visibility:hidden]"
           style={{ transform: "rotateY(180deg)" }}
         >
           <div>
