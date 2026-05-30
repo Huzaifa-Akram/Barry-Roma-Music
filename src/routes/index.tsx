@@ -14,9 +14,16 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import heroImg from "@/assets/hero-band.jpeg";
+import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
+import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
 import gallery5 from "@/assets/gallery-5.jpeg";
+import gallery6 from "@/assets/gallery-6.jpeg";
+import gallery7 from "@/assets/gallery-7.jpeg";
+import gallery8 from "@/assets/gallery-8.jpeg";
+import gallery9 from "@/assets/gallery-9.jpeg";
+import gallery10 from "@/assets/gallery-10.jpeg";
 import featureBand from "@/assets/feature-band.jpg";
 import featureEvent from "@/assets/feature-event.jpg";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -386,7 +393,22 @@ function ImageText() {
 }
 
 function PhotoText() {
-  const images = [featureEvent, gallery2, gallery4, gallery5];
+  const images = [
+    gallery1,
+    gallery2,
+    gallery3,
+    gallery4,
+    gallery5,
+    gallery6,
+    gallery7,
+    gallery8,
+    gallery9,
+    gallery10,
+  ];
+  const mobilePages = Array.from({ length: Math.ceil(images.length / 4) }, (_, pageIndex) => ({
+    startIndex: pageIndex * 4,
+    images: images.slice(pageIndex * 4, pageIndex * 4 + 4),
+  }));
   const [open, setOpen] = useState(false);
   const [startIndex, setStartIndex] = useState(0);
 
@@ -424,29 +446,66 @@ function PhotoText() {
         </div>
 
         <div className="order-1 md:order-2">
-          <div className="grid grid-cols-2 gap-4 md:gap-6">
+          <div className="md:hidden">
+            <Carousel opts={{ align: "start", loop: false }} className="w-full">
+              <CarouselContent className="ml-0">
+                {mobilePages.map((page, pageIndex) => (
+                  <CarouselItem key={pageIndex} className="basis-full pl-0 pr-0">
+                    <div className="grid grid-cols-2 gap-3 px-1">
+                      {page.images.map((img, imageOffset) => {
+                        const imageIndex = page.startIndex + imageOffset;
+
+                        return (
+                          <div
+                            key={imageIndex}
+                            className="group relative aspect-4/5 cursor-pointer overflow-hidden rounded-2xl bg-transparent transform-[translateZ(0)]"
+                            onClick={() => {
+                              setStartIndex(imageIndex);
+                              setOpen(true);
+                            }}
+                          >
+                            <div className="pointer-events-none absolute inset-0 z-10 bg-black/0 transition-colors duration-700 group-hover:bg-black/20" />
+                            <img
+                              src={img}
+                              alt={`Gallery image ${imageIndex + 1}`}
+                              loading="lazy"
+                              className="block h-full w-full object-cover transition-transform duration-800 ease-out scale-[1.01] group-hover:scale-105 will-change-transform"
+                            />
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex" />
+              <CarouselNext className="hidden md:flex" />
+            </Carousel>
+          </div>
+
+          <div className="hidden gap-4 md:grid md:grid-cols-2 md:gap-6 xl:grid-cols-3">
             {images.map((img, idx) => (
               <div
                 key={idx}
-                className="group relative overflow-hidden rounded-2xl cursor-pointer bg-transparent aspect-[4/5] [transform:translateZ(0)]"
+                className="group relative aspect-4/5 cursor-pointer overflow-hidden rounded-2xl bg-transparent transform-[translateZ(0)]"
                 onClick={() => {
                   setStartIndex(idx);
                   setOpen(true);
                 }}
               >
-                <div className="absolute inset-0 bg-black/0 transition-colors duration-700 group-hover:bg-black/20 z-10 pointer-events-none" />
+                <div className="pointer-events-none absolute inset-0 z-10 bg-black/0 transition-colors duration-700 group-hover:bg-black/20" />
                 <img
                   src={img}
                   alt={`Gallery image ${idx + 1}`}
                   loading="lazy"
-                  className="block h-full w-full object-cover transition-transform duration-[800ms] ease-out scale-[1.01] group-hover:scale-105 will-change-transform"
+                  className="block h-full w-full object-cover transition-transform duration-800 ease-out scale-[1.01] group-hover:scale-105 will-change-transform"
                 />
               </div>
             ))}
           </div>
 
           <Dialog open={open} onOpenChange={setOpen}>
-            <DialogContent className="max-w-[100vw] max-h-[100vh] w-screen h-screen m-0 p-0 border-none rounded-none bg-black/95 flex flex-col justify-center items-center shadow-none [&>button]:text-white/60 [&>button]:hover:text-white [&>button]:bg-transparent [&>button]:border-none [&>button]:ring-0 [&>button:focus]:ring-0 [&>button]:outline-none [&>button]:w-16 [&>button]:h-16 [&>button]:top-4 [&>button]:right-4 md:[&>button]:right-8 md:[&>button]:top-8 [&>button_svg]:w-8 [&>button_svg]:h-8 [&>button]:transition-all [&>button]:z-50 [&>button]:flex [&>button]:items-center [&>button]:justify-center">
+            <DialogContent className="max-w-screen max-h-screen w-screen h-screen m-0 p-0 border-none rounded-none bg-black/95 flex flex-col justify-center items-center shadow-none [&>button]:text-white/60 [&>button]:hover:text-white [&>button]:bg-transparent [&>button]:border-none [&>button]:ring-0 [&>button:focus]:ring-0 [&>button]:outline-none [&>button]:w-16 [&>button]:h-16 [&>button]:top-4 [&>button]:right-4 md:[&>button]:right-8 md:[&>button]:top-8 [&>button_svg]:w-8 [&>button_svg]:h-8 [&>button]:transition-all [&>button]:z-50 [&>button]:flex [&>button]:items-center [&>button]:justify-center">
               <DialogTitle className="sr-only">Gallery Image Viewer</DialogTitle>
               <DialogDescription className="sr-only">
                 View full size images in carousel
@@ -587,7 +646,7 @@ function Footer() {
             <a href="#top" className="font-display text-3xl tracking-wide">
               Mr Barry <span className="text-accent">Roma</span>
             </a>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/70">
+            <p className="mt-4 hidden max-w-sm text-sm leading-relaxed text-cream/70 md:block">
               Una band italiana dal sound cinematografico, radicata nella tradizione della dolce
               vita. Calde note di ottoni, voci intime, serate indimenticabili: da Roma a qualsiasi
               luogo ci chiamiate.
@@ -613,7 +672,7 @@ function Footer() {
           </div>
 
           {/* Explore */}
-          <div className="md:col-span-3">
+          <div className="hidden md:block md:col-span-3">
             <p className="font-display text-xs uppercase tracking-[0.3em] text-accent">Esplora</p>
             <ul className="mt-5 space-y-3 text-sm text-cream/80">
               <li>
