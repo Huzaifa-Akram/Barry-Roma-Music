@@ -804,6 +804,10 @@ function Footer() {
                   +39 345 359 9345
                 </a>
               </li>
+              <li className="flex items-start gap-3">
+  <FileText className="mt-0.5 h-4 w-4 text-accent" />
+  <span>P.iva 14722821007</span>
+</li>
             </ul>
           </div>
         </div>
