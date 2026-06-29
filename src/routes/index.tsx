@@ -233,8 +233,8 @@ function RichHeadline() {
       <div ref={ref} className={`reveal-up mx-auto max-w-5xl px-6 text-center ${inView ? "in-view" : ""}`}>
         <p className="font-subtitle text-sm uppercase tracking-[0.3em] text-primary">— Mr Barry</p>
         <h4 className="mt-6 font-display text-4xl leading-tight text-foreground sm:text-6xl md:text-3xl">
-          <span className="whitespace-nowrap">Non affitti uno spazio</span>{" "}
-          <span className="whitespace-nowrap">crei un ricordo</span>
+          <span className="whitespace-nowrap">L’eleganza prende vita </span>{" "}
+          <span className="whitespace-nowrap">al calare della sera</span>
           {/* Non affitti uno spazio.<em className="text-primary">Crei</em> un ricordo.
           <br className="hidden md:block" />
           Ci sono luoghi a Roma dove puoi fare una{" "}
@@ -246,9 +246,9 @@ function RichHeadline() {
           . */}
         </h4>
         <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          Ci sono luoghi a Roma dove puoi fare una festa. E poi c&rsquo;&egrave; Mr Barry.{" "}
-          <span className="whitespace-nowrap">Non affitti uno spazio</span>{" "}
-          <span className="whitespace-nowrap">porti via un&rsquo;esperienza.</span>
+          L’atmosfera di un locale esclusivo, il fascino del piano bar e l’energia del {" "}
+          <span className="whitespace-nowrap">DJ set si fondono in un’esperienza</span>{" "}
+          <span className="whitespace-nowrap">che lascia il segno.</span>
         </p>
       </div>
     </section>
@@ -266,13 +266,13 @@ function EventCards() {
     {
       icon: GlassWater,
       title: "ADDIO AL CELIBATO:",
-      body: "Una notte / irripetibile Ultima serata da single o prima di una nuova vita in entrambi i casi, non è una serata normale. È quella. Mr Barry la tratta come tale: area riservata, animazione, momenti costruiti apposta per fare rumore.",
+      body: "Una notte, un brindisi, ricordi che dureranno per sempre. Vivi il tuo addio al celibato con lo stile inconfondibile di MrBarry.",
       tag: "",
     },
     {
       icon: Briefcase,
       title: "EVENTO AZIENDALE:",
-      body: "Quando vuoi / stupire davvero La cena aziendale classica funziona. Ma se vuoi che la gente ne parli ancora il lunedì, serve qualcosa di diverso. Mr Barry è il contesto esclusivo, discreto, di livello. Il contenuto lo costruiamo insieme: cena, networking, lancio, team. ",
+      body: "Trasforma un incontro di lavoro in un’esperienza esclusiva. Un ambiente raffinato, servizio dedicato e un’atmosfera perfetta per celebrare successi, networking e occasioni speciali. ",
       tag: "",
     },
   ];
@@ -780,7 +780,7 @@ function Footer() {
             <ul className="mt-5 space-y-3 text-sm text-cream/80">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 text-accent" />
-                <span>Roma, Italia · disponibile in tutto il mondo</span>
+                <span>MrRoma, Piazza dei Ponziani 8/C, Roma</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 text-accent" />
