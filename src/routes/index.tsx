@@ -232,8 +232,8 @@ function RichHeadline() {
       <div ref={ref} className={`reveal-up mx-auto max-w-5xl px-6 text-center ${inView ? "in-view" : ""}`}>
         <p className="font-subtitle text-sm uppercase tracking-[0.3em] text-primary">— Mr Barry</p>
         <h4 className="mt-6 font-display text-4xl leading-tight text-foreground sm:text-6xl md:text-3xl">
-          <span className="whitespace-nowrap">L’eleganza prende vita al </span>{" "}
-          <span className="whitespace-nowrap">calare della sera</span>
+          <span className="whitespace-nowrap">L’eleganza prende vita </span>{" "}
+          <span className="whitespace-nowrap">al calare della sera</span>
           {/* Non affitti uno spazio.<em className="text-primary">Crei</em> un ricordo.
           <br className="hidden md:block" />
           Ci sono luoghi a Roma dove puoi fare una{" "}
@@ -416,12 +416,7 @@ function ImageText() {
             <li className="flex gap-3">
               <span className="text-primary"></span>{" "}
             </li>
-            <li className="flex gap-3">
-              <span className="text-primary"></span>{" "}
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary"></span>{" "}
-            </li>
+           
           </ul>
           <Button
             asChild
