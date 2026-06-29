@@ -11,6 +11,7 @@ import {
   Mail,
   Phone,
   MapPin,
+  FileText,
 } from "lucide-react";
 import { useRef, useState } from "react";
 import { Logo } from "@/components/Logo";
@@ -372,7 +373,7 @@ function ImageText() {
   const image = useReveal<HTMLDivElement>();
   const text = useReveal<HTMLDivElement>();
   return (
-    <section id="story" className="bg-background py-28">
+    <section id="story" className="bg-background py-14 md:py-28">
       <div className="mx-auto grid max-w-7xl gap-14 px-6 md:grid-cols-2 md:items-center">
         <div
           ref={image.ref}
@@ -412,21 +413,10 @@ function ImageText() {
             fare una bella serata. È fare quella di cui parlate ancora dopo sei mesi.
           </p>
 
-          <ul className="mt-8 space-y-3 text-foreground/85">
-            <li className="flex gap-3">
-              <span className="text-primary"></span>{" "}
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary"></span>{" "}
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary"></span>{" "}
-            </li>
-          </ul>
           <Button
             asChild
             size="lg"
-            className="mt-10 bg-foreground text-background hover:opacity-90"
+            className="mt-6 bg-foreground text-background hover:opacity-90 md:mt-10"
           >
             <a href="#book">PRENOTA ORA</a>
           </Button>
@@ -803,6 +793,10 @@ function Footer() {
                 <a href="tel:+393453599345" className="transition hover:text-accent">
                   +39 345 359 9345
                 </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <FileText className="mt-0.5 h-4 w-4 text-accent" />
+                <span>P.iva 14722821007</span>
               </li>
             </ul>
           </div>
