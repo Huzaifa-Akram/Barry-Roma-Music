@@ -9,12 +9,12 @@ import {
   Star,
   Instagram,
   Mail,
-  Phone,
   MapPin,
   FileText,
 } from "lucide-react";
 import { useRef, useState } from "react";
 import { Logo } from "@/components/Logo";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { useReveal } from "@/hooks/useReveal";
 import heroImg from "@/assets/hero-band.jpeg";
 import gallery1 from "@/assets/gallery-1.jpg";
@@ -787,8 +787,13 @@ function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Phone className="mt-0.5 h-4 w-4 text-accent" />
-                <a href="tel:+393760722822" className="transition hover:text-accent">
+                <WhatsAppIcon className="mt-0.5 h-4 w-4 text-accent" />
+                <a
+                  href="https://wa.me/393760722822"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-accent"
+                >
                   +39 376 0722822
                 </a>
               </li>
