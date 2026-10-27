@@ -49,7 +49,7 @@ function RootComponent() {
       <Outlet />
       <Toaster richColors position="top-center" />
       <a
-        href="https://wa.me/393453599345"
+        href="https://wa.me/393760722822"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contattaci su WhatsApp"
