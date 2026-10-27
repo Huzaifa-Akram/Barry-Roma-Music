@@ -790,8 +790,8 @@ function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 text-accent" />
-                <a href="tel:+393453599345" className="transition hover:text-accent">
-                  +39 345 359 9345
+                <a href="tel:+393760722822" className="transition hover:text-accent">
+                  +39 376 0722822
                 </a>
               </li>
               <li className="flex items-start gap-3">
